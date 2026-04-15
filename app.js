@@ -87,21 +87,6 @@ app.use((req, res, next) => {
 
 
 
-
-// Validation Middleware (Make sure listingSchema is imported)
-const validateListing = (req, res, next) => {
-  const { error } = listingSchema.validate(req.body);
-
-  if (error) {
-    const errMsg = error.details.map((el) => el.message).join(", ");
-    throw new ExpressError(400, errMsg);
-  }
-
-  next();
-};
-
-
-
 // app.get("/demouser", async (req, res) => {
 //   let fakeUser = new User({
 //     email:"student@gmail.com",
