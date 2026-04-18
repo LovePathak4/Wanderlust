@@ -43,9 +43,19 @@ module.exports.login= async (req, res) => {
 
 
 
-module.exports.logout= async (req, res) => {
-        req.flash("success","Welcome back to Wanderlust!");
-        let redirectUrl = res.locals.redirectUrl || "/listings";
-        res.redirect(redirectUrl);
+// module.exports.logout= async (req, res) => {
+//         req.flash("success","Welcome back to Wanderlust!");
+//         let redirectUrl = res.locals.redirectUrl || "/listings";
+//         res.redirect(redirectUrl);
 
+// };
+
+module.exports.logout = (req, res, next) => {
+    req.logout(function(err) {
+        if (err) {
+            return next(err);
+        }
+        req.flash("success", "Logged out successfully!");
+        res.redirect("/listings" || "res.locals.redirectUrl");
+    });
 };

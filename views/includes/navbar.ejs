@@ -17,7 +17,20 @@
         <a class="nav-link" href="/login">Log In</a>
         <% } %>
         <% if(currUser){ %>
-        <a class="nav-link" href="/logout">Log Out</a>
+        <!-- <a class="nav-link" href="/logout">Log Out</a> -->
+         <form action="/logout" method="POST" style="display:inline;">
+           <button class="nav-link btn btn-link" 
+                   style="padding:0; border:none;">
+                    Log Out
+           </button>
+         </form>
+
+
+
+
+
+
+
         <% } %>
       </div>
     </div>
