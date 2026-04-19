@@ -25,19 +25,28 @@ const listingSchema = new mongoose.Schema({
     //  },
 
 
-      image: {
-        filename: String,
-        url: {
-            type: String,
-            default: "https://wallpaperaccess.com/full/112722.jpg",
-            set: (v) => {
-                if (!v || v.trim() === " ") {
-                    return "https://wallpaperaccess.com/full/112722.jpg";
-                }
-                return v;
-            }
-        }
+    //   image: {
+    //     filename: String,
+    //     url: {
+    //         type: String,
+    //         default: "https://wallpaperaccess.com/full/112722.jpg",
+    //         set: (v) => {
+    //             if (!v || v.trim() === " ") {
+    //                 return "https://wallpaperaccess.com/full/112722.jpg";
+    //             }
+    //             return v;
+    //         }
+    //     }
+    // },
+
+
+
+    image: {
+        url:String,
+        filename:String,
     },
+
+
 
     price: Number,
     location: String,
