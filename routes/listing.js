@@ -21,6 +21,16 @@ router.route("/")
     wrapAsync(listingController.createListing)  
 );
 
+
+
+router.get("/search", 
+    wrapAsync(listingController.searchByCountry));
+
+
+
+
+
+
 //add category to listing
 router.get("/category/:category",
 wrapAsync(listingController.filterCategory));
