@@ -20,6 +20,10 @@ router.route("/")
     validateListing, 
     wrapAsync(listingController.createListing)  
 );
+
+//add category to listing
+router.get("/category/:category",
+wrapAsync(listingController.filterCategory));
  
  
 //new route
