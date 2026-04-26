@@ -122,16 +122,16 @@ module.exports.filterCategory = async (req, res) => {
 
 
 
-module.exports.searchByCountry = async (req, res) => {
-    let { country } = req.query;
+module.exports.searchByLocation = async (req, res) => {
+    let { location } = req.query;
 
-    if (!country) {
+    if (!location) {
         return res.redirect("/listings");
     }
 
     let searchedListings = await Listing.find({
-        country: {
-            $regex: `^${country.trim()}$`,
+        location: {
+            $regex: `^${location.trim()}$`,
             $options: "i"
         }
     });

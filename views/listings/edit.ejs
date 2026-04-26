@@ -47,6 +47,33 @@
                     <input name="listing[country]" value="<%= listing.country %>" type="text" class="form-control">
                 </div>
 
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category</label>
+
+                    <select name="listing[category]" id="category" class="form-select">
+                        <option value="" disabled>Select Category</option>
+                        <option value="Camping" <%= listing.category === "Camping" ? "selected" : "" %>>Camping
+                        </option>
+                        <option value="Farms" <%= listing.category === "Farms" ? "selected" : "" %>>Farms
+                        </option>
+                        <option value="Arctic" <%= listing.category === "Arctic" ? "selected" : "" %>>Arctic
+                        </option>
+                        <option value="Rooms" <%= listing.category === "Rooms" ? "selected" : "" %>>Rooms
+                        </option>
+                        <option value="Iconic-City" <%= listing.category === "Iconic-City" ? "selected" : "" %>>Iconic Cities
+                        </option>
+                        <option value="Mountain" <%= listing.category === "Mountain" ? "selected" : "" %>>Mountains
+                        </option>
+                        <option value="Trending" <%= listing.category === "Trending" ? "selected" : "" %>>Trending
+                        </option>
+                        <option value="Castles" <%= listing.category === "Castles" ? "selected" : "" %>>Castles
+                        </option>
+                        <option value="Amazing-Pools" <%= listing.category === "Amazing-Pools" ? "selected" : "" %>>Amazing Pools
+                        </option>
+                        <option value="Beach" <%= listing.category === "Beach" ? "selected" : "" %>>Beach
+                        </option>
+                    </select>
+
                 <br><br>
                 <button class="btn btn-dark add-btn">Edit</button>
                 <br>

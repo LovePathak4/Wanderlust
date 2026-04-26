@@ -2,36 +2,23 @@
 
     <div class="row">
         <div class="col-8 offset-2">
-    <h3>Create a new Listing</h3>
-    <form method="POST" 
-       action="/listings"  
-       novalidate 
-       class="needs-validation"  
-       enctype="multipart/form-data" 
-    >
+            <h3>Create a new Listing</h3>
+            <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
 
-        <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
-            <input name="listing[title]"
-               placeholder="Title"
-               type="text" 
-               class="form-control" 
-               required
-               />   
-        </div>
-     
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input name="listing[title]" placeholder="Title" type="text" class="form-control" required />
+                </div>
 
-        <div class="mb-3">
-            <label for="description" class="form-label">Description</label>
-            <textarea name="listing[description]"
-             class="form-control"
-             required
-             >
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="listing[description]" class="form-control" required>
             </textarea>
-        </div>
-      
+                </div>
 
-        <!-- <div class="mb-3">
+
+                <!-- <div class="mb-3">
             <label for="image" class="form-label">Image</label>
               <input 
               name="listing[image][url]"
@@ -41,93 +28,55 @@
              />
        </div> -->
 
-       <div class="mb-3">
-            <label for="image" class="form-label">Upload Image</label>
-              <input 
-              name="listing[image][url]"
-              type="file"
-              class="form-control"
-               required
-             />
-            
-       </div>
-    
-    
-       <div class="mb-3">
-        <label for="price" class="form-label">Price</label>
-          <input name="listing[price]"
-          placeholder="Price"
-          type="number"
-          class="form-control"
-          required/>
-       </div>
-        
+                <div class="mb-3">
+                    <label for="image" class="form-label">Upload Image</label>
+                    <input name="listing[image][url]" type="file" class="form-control" required />
 
-       <div class="mb-3">
-        <label for="location" class="form-label">Location</label>
-         <input name="listing[location]"
-          placeholder="Location"
-          type="text"
-          class="form-control"
-          required 
-          
-          />
-       </div>
-      
+                </div>
 
 
-        <div class="mb-3">
-        <label for="country" class="form-label">Country</label>  
-        <input name="listing[country]" 
-         placeholder="Country" 
-         type="text"
-         class="form-control"
-         required
-         />
-       </div>
-
-       <div class="mb-3">
-    <label for="category" class="form-label">Category</label>
-
-    <select
-        name="listing[category]"
-        id="category"
-        class="form-select"
-        required
-    >
-        <option value="" selected disabled>Select Category</option>
-        <option value="Rooms">Rooms</option>
-        <option value="Trending">Trending</option>
-        <option value="Beach">Beach</option>
-        <option value="Mountain">Mountain</option>
-        <option value="Iconic-City">Iconic City</option>
-        <option value="Castles">Castles</option>
-        <option value="Amazing-Pools">Amazing Pools</option>
-        <option value="Camping">Camping</option>
-        <option value="Farm">Farm</option>
-        <option value="Arctic">Arctic</option>
-    </select>
-</div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input name="listing[price]" placeholder="Price" type="number" class="form-control" required />
+                </div>
 
 
-<!-- <div class="mb-3">
-    <label for="city" class="form-label">City</label>
-
-    <input
-      name="listing[city]"
-      placeholder="Ex: Goa, Jaipur, Manali"
-      type="text"
-      class="form-control"
-      required
-    />
-    </div> -->
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input name="listing[location]" placeholder="Location" type="text" class="form-control" required />
+                </div>
 
 
 
-        <button class="btn btn-dark add-btn mb-3">Add</button>
-        <br>
+                <div class="mb-3">
+                    <label for="country" class="form-label">Country</label>
+                    <input name="listing[country]" placeholder="Country" type="text" class="form-control" required />
+                </div>
 
-    </form>
-</div>
-</div>
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category</label>
 
+                    <select name="listing[category]" id="category" class="form-select" required>
+                        <option value="" selected disabled>Select Category</option>
+                        <option value="Rooms">Rooms</option>
+                        <option value="Trending">Trending</option>
+                        <option value="Beach">Beach</option>
+                        <option value="Mountain">Mountain</option>
+                        <option value="Iconic-City">Iconic City</option>
+                        <option value="Castles">Castles</option>
+                        <option value="Amazing-Pools">Amazing Pools</option>
+                        <option value="Camping">Camping</option>
+                        <option value="Farm">Farm</option>
+                        <option value="Arctic">Arctic</option>
+                    </select>
+                </div>
+
+
+
+
+                <button class="btn btn-dark add-btn mb-3">Add</button>
+                <br>
+
+            </form>
+        </div>
+    </div>

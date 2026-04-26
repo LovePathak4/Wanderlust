@@ -24,7 +24,7 @@ router.route("/")
 
 
 router.get("/search", 
-    wrapAsync(listingController.searchByCountry));
+    wrapAsync(listingController.searchByLocation));
 
 
 
