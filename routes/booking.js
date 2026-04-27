@@ -1,23 +1,30 @@
-const express=require("express");
-const router=express.Router();
+const express = require("express");
+const router = express.Router();
 
-const bookingController=
-require("../controllers/bookings");
+const bookingController =
+    require("../controllers/bookings");
 
-const {isLoggedIn}=
-require("../middleware");
+const { isLoggedIn } =
+    require("../middleware");
 
 
 router.post(
-"/listings/:id/book",
-isLoggedIn,
-bookingController.createBooking
+    "/listings/:id/book",
+    isLoggedIn,
+    bookingController.createBooking
 );
 
 router.get(
-"/mybookings",
-isLoggedIn,
-bookingController.myBookings
+    "/mybookings",
+    isLoggedIn,
+    bookingController.myBookings
 );
 
-module.exports=router;
+
+router.delete(
+    "/bookings/:bookingId",
+    isLoggedIn,
+    bookingController.cancelBooking
+);
+
+module.exports = router;

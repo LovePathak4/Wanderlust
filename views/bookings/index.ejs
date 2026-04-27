@@ -24,8 +24,17 @@
                 ₹ <%= booking.totalPrice %>
             </p>
 
+
+            <form method="POST" action="/bookings/<%= booking._id %>?_method=DELETE">
+
+                <button class="btn btn-danger">
+                    Cancel Booking
+                </button>
+
+            </form>
+
+
         </div>
     </div>
 
     <% } %>
-

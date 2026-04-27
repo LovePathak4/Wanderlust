@@ -44,3 +44,36 @@ module.exports.myBookings = async (req, res) => {
 
     res.render("bookings/index", { bookings });
 };
+
+
+
+module.exports.cancelBooking = async(req,res)=>{
+
+const Booking = require("../models/booking");
+const Listing = require("../models/listing");
+
+let {bookingId} = req.params;
+
+let booking = await Booking.findById(bookingId);
+
+if(!booking){
+ req.flash("error","Booking not found");
+ return res.redirect("/mybookings");
+}
+
+await Listing.findByIdAndUpdate(
+ booking.listing,
+ {
+   $pull:{
+      bookings:booking._id
+   }
+ }
+);
+
+await Booking.findByIdAndDelete(bookingId);
+
+req.flash("success","Booking cancelled successfully");
+
+res.redirect("/mybookings");
+
+};
