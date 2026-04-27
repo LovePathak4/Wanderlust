@@ -1,0 +1,31 @@
+<h2>My Bookings</h2>
+
+<% for(let booking of bookings){ %>
+
+    <div class="card mb-3">
+        <div class="card-body">
+
+            <h4>
+                <%= booking.listing ? booking.listing.title : "Listing Removed" %>
+            </h4>
+
+            <p>
+                Check In:
+                <%= booking.checkIn.toDateString() %>
+            </p>
+
+            <p>
+                Check Out:
+                <%= booking.checkOut.toDateString() %>
+            </p>
+
+            <p>
+                Total:
+                ₹ <%= booking.totalPrice %>
+            </p>
+
+        </div>
+    </div>
+
+    <% } %>
+

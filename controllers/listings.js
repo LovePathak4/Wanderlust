@@ -2,7 +2,8 @@ const Listing = require("../models/listing");
 
 
 module.exports.index = async (req, res) => {
-    const allListings = await Listing.find({});
+    const allListings = await Listing.find({})
+    .populate("bookings");
     res.render("listings/index", { allListings });
 };
 
@@ -26,9 +27,16 @@ module.exports.showListing = async (req, res) => {
             populate: {
                 path: "author",
             },
+        })
+            .populate({
+                path:"bookings",
+            populate:{
+                path:"guest"
+            }
 
         })
         .populate("owner");
+
     if (!listing) {
         req.flash("error", "Listing not found!");
         return res.redirect("/listings");

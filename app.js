@@ -24,6 +24,7 @@ const User = require("./models/user.js");
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
+const bookingRoutes=require("./routes/booking");
 
 
 // MongoDB Connection
@@ -50,6 +51,7 @@ app.engine("ejs", ejsMate);
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
+
 
 const sessionOptions = {
   secret: "mysupersecretcode!",
@@ -107,6 +109,7 @@ app.use((req, res, next) => {
 // Routes Middleware
 app.use("/listings", listingRouter);
 app.use("/listings/:id/reviews", reviewRouter);
+app.use("/",bookingRoutes);
 app.use("/", userRouter);
 
 // 404 Handler

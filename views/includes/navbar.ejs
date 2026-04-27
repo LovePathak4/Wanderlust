@@ -1,25 +1,26 @@
 <style>
-  .search-btn{
+  .search-btn {
     background-color: #fe424d;
     color: #fff;
     border-radius: 25px;
     padding: 0 1rem 0 1rem;
   }
-  .search-btn:hover{
+
+  .search-btn:hover {
     background-color: #fe424d;
-    color:#fff;
+    color: #fff;
   }
-  .search-btn i{
+
+  .search-btn i {
     display: inline;
     margin-right: 0.5rem;
   }
 
-  .search-inp{
+  .search-inp {
     border-radius: 25px;
     padding: 0.5rem 3rem 0.5rem 3rem;
     font-size: 1rem;
   }
-
 </style>
 
 
@@ -32,7 +33,8 @@
 <nav class="navbar navbar-expand-md bg-light border-bottom sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -44,45 +46,39 @@
 
 
 
-       <!-- Search button and input field -->
+      <!-- Search button and input field -->
       <div class="navbar-nav ms-auto">
         <form class="d-flex" role="search" action="/listings/search" method="GET">
-          <input 
-               class="form-control me-2 search-inp" 
-               type="search" 
-               name="location"
-               placeholder="Search by location"/>
+          <input class="form-control me-2 search-inp" type="search" name="location" placeholder="Search by location" />
 
           <button class="btn search-btn" type="submit">
-              <i class="fa-solid fa-magnifying-glass"></i>Search
+            <i class="fa-solid fa-magnifying-glass"></i>Search
           </button>
         </form>
-     </div>
+      </div>
 
       <div class="navbar-nav ms-auto">
         <a class="nav-link" href="/listings/new">Airbnb your home</a>
+        <a class="nav-link" href="/mybookings">My Bookings</a>
         <% if(!currUser){ %>
-        <a class="nav-link"  href="/signup"><b>Sign Up</b></a>
-        <a class="nav-link" href="/login"><b>Log In</b></a>
-        <% } %>
-        <% if(currUser){ %>
-        <!-- <a class="nav-link" href="/logout">Log Out</a> -->
-         <form action="/logout" method="POST" style="display:inline;">
-           <button class="nav-link btn btn-link" 
-                   style="padding:0; border:none;">
-                    Log Out
-           </button>
-         </form>
+          
+          <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+          <a class="nav-link" href="/login"><b>Log In</b></a>
+          <% } %>
+            <% if(currUser){ %>
+
+              <form action="/logout" method="POST" style="display:inline;">
+                <button class="nav-link btn btn-link" style="padding:0; border:none;">
+                  Log Out
+                </button>
+              </form>
 
 
 
 
 
-
-
-        <% } %>
+              <% } %>
       </div>
     </div>
   </div>
 </nav>
-
