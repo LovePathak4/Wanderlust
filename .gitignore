@@ -1,3 +1,2 @@
 node_modules/
-MAJOR_PROJECT/.env
-MAJOR_PROJECT/.env.local
+.env
